@@ -6,15 +6,12 @@
     <title>Aegira — Automated Recovery for Developers</title>
     <meta name="description" content="Aegira monitors your services and containers. When they fail, it recovers them. Automatically. Simple. No course needed.">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Aegira — Automated Recovery for Developers">
     <meta property="og:description" content="Stop waking up at 2AM. Aegira recovers your services and containers automatically.">
     <meta property="og:type" content="website">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,14 +21,18 @@
             theme: {
                 extend: {
                     colors: {
-                        bg:      '#0d1117',
-                        card:    '#161b22',
-                        border:  '#30363d',
-                        text:    '#e6edf3',
-                        muted:   '#8b949e',
-                        accent:  '#3fb950',
-                        accent2: '#2ea043',
-                        danger:  '#f85149',
+                        bg:      '#0f0d17',
+                        card:    '#1a1725',
+                        border:  '#2a2538',
+                        text:    '#e8e4f0',
+                        muted:   '#9b93b8',
+                        accent:  '#a78bfa',
+                        accent2: '#8b5cf6',
+                        accent3: '#c4b5fd',
+                        mint:    '#6ee7b7',
+                        peach:   '#fca5a5',
+                        sky:     '#7dd3fc',
+                        yellow:  '#fde047',
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -43,19 +44,35 @@
     </script>
 
     <style>
-        body { background-color: #0d1117; }
-        .glow { box-shadow: 0 0 40px rgba(63, 185, 80, 0.15); }
+        body { background-color: #0f0d17; }
+        .glow { box-shadow: 0 0 80px rgba(167, 139, 250, 0.25); }
         .grid-bg {
             background-image:
-                linear-gradient(rgba(48, 54, 61, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(48, 54, 61, 0.3) 1px, transparent 1px);
-            background-size: 40px 40px;
+                linear-gradient(rgba(42, 37, 56, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42, 37, 56, 0.4) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
-        .fade-in { animation: fadeIn 0.6s ease-in; }
+        .fade-in { animation: fadeIn 0.7s ease-in; }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 30%, #6ee7b7 70%, #7dd3fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(167, 139, 250, 0.15);
+        }
+        .pastel-glow-1 { box-shadow: 0 0 40px rgba(167, 139, 250, 0.15); }
+        .pastel-glow-2 { box-shadow: 0 0 40px rgba(110, 231, 183, 0.15); }
+        .pastel-glow-3 { box-shadow: 0 0 40px rgba(125, 211, 252, 0.15); }
     </style>
 </head>
 
@@ -65,8 +82,8 @@
 <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-bg/80 border-b border-border">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2 group">
-            <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent/20 transition">
-                <span class="text-accent font-bold text-sm">A</span>
+            <div class="w-8 h-8 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center group-hover:bg-accent/25 transition">
+                <span class="text-accent3 font-bold text-sm">A</span>
             </div>
             <span class="font-bold text-lg">Aegira</span>
         </a>
@@ -74,7 +91,7 @@
             <a href="#features" class="text-muted hover:text-text transition">Features</a>
             <a href="#pricing" class="text-muted hover:text-text transition">Pricing</a>
             <a href="#install" class="text-muted hover:text-text transition">Install</a>
-            <a href="https://github.com/" target="_blank" class="text-muted hover:text-text transition">GitHub</a>
+            <a href="https://github.com/talatsajafa" target="_blank" class="text-muted hover:text-text transition">GitHub</a>
         </div>
         <a href="#download" class="px-4 py-2 rounded-lg bg-accent hover:bg-accent2 text-bg font-semibold text-sm transition">
             Download
@@ -86,13 +103,13 @@
 <section class="relative pt-32 pb-24 px-6 grid-bg">
     <div class="max-w-4xl mx-auto text-center fade-in">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card text-xs text-muted mb-8">
-            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
             Free • Open Source • Linux 64-bit
         </div>
 
-        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
             Automated recovery<br>
-            <span class="text-accent">for developers</span><br>
+            <span class="gradient-text">for developers</span><br>
             tired of 2AM wakeups.
         </h1>
 
@@ -110,8 +127,8 @@
             </a>
         </div>
 
-        <p class="text-sm text-muted mt-6 font-mono">
-            $ curl -fsSL https://aegira.dev/install.sh | sudo bash
+        <p class="text-sm text-muted mt-8 font-mono">
+            <span class="text-accent3">$</span> curl -fsSL https://aegira.dev/install.sh | sudo bash
         </p>
     </div>
 </section>
@@ -120,87 +137,81 @@
 <section id="features" class="py-24 px-6 border-t border-border">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Everything you need. Nothing you don't.</h2>
-            <p class="text-muted max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Everything you need.</h2>
+            <p class="text-muted max-w-2xl mx-auto text-lg">
                 No bloated dashboards. No certifications. Just recovery that works.
             </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-accent/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition">
+                    <svg class="w-5 h-5 text-accent3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">Service Recovery</h3>
+                <h3 class="font-semibold mb-2 text-lg">Service Recovery</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     systemd service down? Aegira restarts it, verifies it's active, and logs the incident.
                 </p>
             </div>
 
-            <!-- Card 2 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-mint/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-mint/15 flex items-center justify-center mb-4 group-hover:bg-mint/25 transition">
+                    <svg class="w-5 h-5 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">Docker Recovery</h3>
+                <h3 class="font-semibold mb-2 text-lg">Docker Recovery</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     Container crashed with exit 137? OOM? Unhealthy? Aegira detects and restarts it.
                 </p>
             </div>
 
-            <!-- Card 3 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-sky/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-sky/15 flex items-center justify-center mb-4 group-hover:bg-sky/25 transition">
+                    <svg class="w-5 h-5 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">Custom Commands</h3>
+                <h3 class="font-semibold mb-2 text-lg">Custom Commands</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     Write your own recovery rules. Arbitrary commands, command sequences, placeholders.
                 </p>
             </div>
 
-            <!-- Card 4 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-peach/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-peach/15 flex items-center justify-center mb-4 group-hover:bg-peach/25 transition">
+                    <svg class="w-5 h-5 text-peach" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">HTTP Health</h3>
+                <h3 class="font-semibold mb-2 text-lg">HTTP Health</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     API dead but container running? Aegira polls your /health endpoint and recovers.
                 </p>
             </div>
 
-            <!-- Card 5 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-yellow/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-yellow/15 flex items-center justify-center mb-4 group-hover:bg-yellow/25 transition">
+                    <svg class="w-5 h-5 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">Gmail Alerts</h3>
+                <h3 class="font-semibold mb-2 text-lg">Gmail Alerts</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     Get notified when something breaks. And when it's fixed. No spam, just signal.
                 </p>
             </div>
 
-            <!-- Card 6 -->
-            <div class="p-6 rounded-xl bg-card border border-border hover:border-accent/30 transition group">
-                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-hover p-6 rounded-2xl bg-card border border-border hover:border-accent/40 transition group">
+                <div class="w-11 h-11 rounded-xl bg-accent3/15 flex items-center justify-center mb-4 group-hover:bg-accent3/25 transition">
+                    <svg class="w-5 h-5 text-accent3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                     </svg>
                 </div>
-                <h3 class="font-semibold mb-2">Dry Run</h3>
+                <h3 class="font-semibold mb-2 text-lg">Dry Run</h3>
                 <p class="text-sm text-muted leading-relaxed">
                     See exactly what Aegira would do — before it does it. Zero risk.
                 </p>
@@ -210,27 +221,27 @@
 </section>
 
 <!-- ─── Install ─── -->
-<section id="install" class="py-24 px-6 border-t border-border bg-card/30">
+<section id="install" class="py-24 px-6 border-t border-border bg-accent/5">
     <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Install in 30 seconds</h2>
-        <p class="text-muted mb-8">No dependencies. No config files. No courses.</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Install in 30 seconds</h2>
+        <p class="text-muted mb-10 text-lg">No dependencies. No config files. No courses.</p>
 
-        <div class="rounded-xl border border-border bg-bg overflow-hidden text-left">
-            <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-card">
-                <div class="w-3 h-3 rounded-full bg-danger/60"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                <div class="w-3 h-3 rounded-full bg-accent/60"></div>
+        <div class="rounded-2xl border border-border bg-card overflow-hidden text-left shadow-2xl">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-accent/5">
+                <div class="w-3 h-3 rounded-full bg-peach/60"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow/60"></div>
+                <div class="w-3 h-3 rounded-full bg-mint/60"></div>
                 <span class="ml-2 text-xs text-muted font-mono">terminal</span>
             </div>
-            <pre class="p-6 font-mono text-sm overflow-x-auto"><code><span class="text-muted"># Install Aegira</span>
-<span class="text-accent">$</span> curl -fsSL https://aegira.dev/install.sh | sudo bash
+            <pre class="p-6 font-mono text-sm overflow-x-auto bg-bg/50"><code><span class="text-muted"># Install Aegira</span>
+<span class="text-accent3">$</span> curl -fsSL https://aegira.dev/install.sh | sudo bash
 
 <span class="text-muted"># Or from source</span>
-<span class="text-accent">$</span> sudo ./target/release/aegira install
+<span class="text-accent3">$</span> sudo ./target/release/aegira install
 
 <span class="text-muted"># Configure your target</span>
-<span class="text-accent">$</span> sudo aegira configure service nginx
-<span class="text-accent">$</span> sudo aegira configure container my-app
+<span class="text-accent3">$</span> sudo aegira configure service nginx
+<span class="text-accent3">$</span> sudo aegira configure container my-app
 
 <span class="text-muted"># Done. Aegira is now protecting your services.</span></code></pre>
         </div>
@@ -243,57 +254,54 @@
 <section id="pricing" class="py-24 px-6 border-t border-border">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, honest pricing</h2>
-            <p class="text-muted max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Simple, honest pricing</h2>
+            <p class="text-muted max-w-2xl mx-auto text-lg">
                 Start free. Upgrade when you need more rules.
             </p>
         </div>
 
         <div class="grid md:grid-cols-4 gap-6">
-            <!-- Free -->
-            <div class="p-6 rounded-xl bg-card border border-border flex flex-col">
+            <div class="p-6 rounded-2xl bg-card border border-border flex flex-col card-hover">
                 <div class="mb-6">
                     <h3 class="font-semibold text-lg mb-1">Free</h3>
-                    <div class="text-3xl font-bold mb-1">$0</div>
+                    <div class="text-4xl font-bold mb-1">$0</div>
                     <p class="text-xs text-muted">Forever</p>
                 </div>
                 <ul class="space-y-3 text-sm flex-grow mb-6">
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>10 builtin rules</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>3 custom rules</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>HTTP health monitoring</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Docker recovery</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Gmail alerts</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Multi-container</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Dry run mode</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>10 builtin rules</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>3 custom rules</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>HTTP health monitoring</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>Docker recovery</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>Gmail alerts</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>Multi-container</span></li>
+                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">✓</span><span>Dry run mode</span></li>
                 </ul>
                 <a href="#download" class="block text-center px-4 py-2.5 rounded-lg border border-border hover:border-accent/50 font-semibold text-sm transition">
                     Download
                 </a>
             </div>
 
-            <!-- Pro (highlighted) -->
-            <div class="p-6 rounded-xl bg-card border-2 border-accent relative flex flex-col">
+            <div class="p-6 rounded-2xl bg-card border-2 border-accent relative flex flex-col glow">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-bg text-xs font-bold">
                     COMING SOON
                 </div>
                 <div class="mb-6 mt-2">
                     <h3 class="font-semibold text-lg mb-1">Pro</h3>
-                    <div class="text-3xl font-bold mb-1">$19<span class="text-sm text-muted font-normal">/mo</span></div>
+                    <div class="text-4xl font-bold mb-1">$19<span class="text-sm text-muted font-normal">/mo</span></div>
                     <p class="text-xs text-muted">or $190/year (2 months free)</p>
                 </div>
                 <ul class="space-y-3 text-sm flex-grow mb-6">
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span><strong>Unlimited</strong> custom rules</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>100+ community rules</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Priority support</span></li>
-                    <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span><span>Everything in Free</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent3 mt-0.5">✓</span><span><strong>Unlimited</strong> custom rules</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent3 mt-0.5">✓</span><span>100+ community rules</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent3 mt-0.5">✓</span><span>Priority support</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent3 mt-0.5">✓</span><span>Everything in Free</span></li>
                 </ul>
                 <a href="GOOGLE_FORM_LINK_HERE" target="_blank" class="block text-center px-4 py-2.5 rounded-lg bg-accent hover:bg-accent2 text-bg font-semibold text-sm transition">
                     Join Waitlist
                 </a>
             </div>
 
-            <!-- Company -->
-            <div class="p-6 rounded-xl bg-card border border-border flex flex-col">
+            <div class="p-6 rounded-2xl bg-card border border-border flex flex-col card-hover">
                 <div class="mb-6">
                     <h3 class="font-semibold text-lg mb-1">Company</h3>
                     <div class="text-3xl font-bold mb-1">Per-node</div>
@@ -310,8 +318,7 @@
                 </a>
             </div>
 
-            <!-- Enterprise -->
-            <div class="p-6 rounded-xl bg-card border border-border flex flex-col">
+            <div class="p-6 rounded-2xl bg-card border border-border flex flex-col card-hover">
                 <div class="mb-6">
                     <h3 class="font-semibold text-lg mb-1">Enterprise</h3>
                     <div class="text-3xl font-bold mb-1">Custom</div>
@@ -336,22 +343,22 @@
 </section>
 
 <!-- ─── Download ─── -->
-<section id="download" class="py-24 px-6 border-t border-border bg-card/30">
+<section id="download" class="py-24 px-6 border-t border-border bg-accent/5">
     <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Download Aegira Free</h2>
-        <p class="text-muted mb-8">Linux 64-bit. Open source. MIT license.</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Download Aegira Free</h2>
+        <p class="text-muted mb-10 text-lg">Linux 64-bit. Open source. MIT license.</p>
 
         <div class="grid sm:grid-cols-2 gap-4 max-w-md mx-auto">
-            <a href="https://github.com/tumhara-username/aegira/releases/latest" class="px-6 py-4 rounded-xl bg-card border border-border hover:border-accent/50 transition flex flex-col items-center gap-2">
-                <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+            <a href="https://github.com/talatsajafa/aegira/releases/latest" class="px-6 py-5 rounded-2xl bg-card border border-border hover:border-mint/50 transition flex flex-col items-center gap-2 card-hover">
+                <svg class="w-8 h-8 text-mint" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
                 </svg>
                 <span class="font-semibold">GitHub Releases</span>
                 <span class="text-xs text-muted">Latest binary</span>
             </a>
 
-            <a href="https://github.com/tumhara-username/aegira" class="px-6 py-4 rounded-xl bg-card border border-border hover:border-accent/50 transition flex flex-col items-center gap-2">
-                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="https://github.com/talatsajafa/aegira" class="px-6 py-5 rounded-2xl bg-card border border-border hover:border-sky/50 transition flex flex-col items-center gap-2 card-hover">
+                <svg class="w-8 h-8 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                 </svg>
                 <span class="font-semibold">Build from Source</span>
@@ -359,11 +366,11 @@
             </a>
         </div>
 
-        <div class="mt-12 p-4 rounded-lg bg-bg border border-border inline-block">
+        <div class="mt-12 p-4 rounded-xl bg-card border border-border inline-block">
             <p class="text-xs text-muted">
-                <span class="text-accent">✓</span> No signup required &nbsp;•&nbsp;
-                <span class="text-accent">✓</span> No email &nbsp;•&nbsp;
-                <span class="text-accent">✓</span> Just download and run
+                <span class="text-mint">✓</span> No signup required &nbsp;•&nbsp;
+                <span class="text-mint">✓</span> No email &nbsp;•&nbsp;
+                <span class="text-mint">✓</span> Just download and run
             </p>
         </div>
     </div>
@@ -372,24 +379,13 @@
 <!-- ─── FAQ ─── -->
 <section class="py-24 px-6 border-t border-border">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Questions?</h2>
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Questions?</h2>
 
         <div class="space-y-4">
-            <details class="group p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition">
-                <summary class="font-semibold cursor-pointer flex items-center justify-between">
-                    <span>How is Aegira different from Uptime Kuma?</span>
-                    <span class="text-accent group-open:rotate-45 transition">+</span>
-                </summary>
-                <p class="text-sm text-muted mt-3 leading-relaxed">
-                    Uptime Kuma monitors and alerts. Aegira monitors, alerts, <strong>and recovers</strong>.
-                    When your service is down, Aegira restarts it automatically — no human needed.
-                </p>
-            </details>
-
-            <details class="group p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition">
+            <details class="group p-5 rounded-2xl bg-card border border-border hover:border-accent/40 transition">
                 <summary class="font-semibold cursor-pointer flex items-center justify-between">
                     <span>Do I need to know how to code?</span>
-                    <span class="text-accent group-open:rotate-45 transition">+</span>
+                    <span class="text-accent3 group-open:rotate-45 transition text-xl">+</span>
                 </summary>
                 <p class="text-sm text-muted mt-3 leading-relaxed">
                     No. Install it, point it at your service or container, and it just works.
@@ -397,10 +393,10 @@
                 </p>
             </details>
 
-            <details class="group p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition">
+            <details class="group p-5 rounded-2xl bg-card border border-border hover:border-accent/40 transition">
                 <summary class="font-semibold cursor-pointer flex items-center justify-between">
                     <span>Does Aegira need Docker?</span>
-                    <span class="text-accent group-open:rotate-45 transition">+</span>
+                    <span class="text-accent3 group-open:rotate-45 transition text-xl">+</span>
                 </summary>
                 <p class="text-sm text-muted mt-3 leading-relaxed">
                     No. Aegira works with plain systemd services. Docker support is optional —
@@ -408,10 +404,10 @@
                 </p>
             </details>
 
-            <details class="group p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition">
+            <details class="group p-5 rounded-2xl bg-card border border-border hover:border-accent/40 transition">
                 <summary class="font-semibold cursor-pointer flex items-center justify-between">
                     <span>Is Aegira really free?</span>
-                    <span class="text-accent group-open:rotate-45 transition">+</span>
+                    <span class="text-accent3 group-open:rotate-45 transition text-xl">+</span>
                 </summary>
                 <p class="text-sm text-muted mt-3 leading-relaxed">
                     Yes. The free version is open source (MIT license) and includes 10 builtin rules,
@@ -420,17 +416,28 @@
                 </p>
             </details>
 
-            <details class="group p-5 rounded-xl bg-card border border-border hover:border-accent/30 transition">
+            <details class="group p-5 rounded-2xl bg-card border border-border hover:border-accent/40 transition">
                 <summary class="font-semibold cursor-pointer flex items-center justify-between">
                     <span>What about safety? Can Aegira break my system?</span>
-                    <span class="text-accent group-open:rotate-45 transition">+</span>
+                    <span class="text-accent3 group-open:rotate-45 transition text-xl">+</span>
                 </summary>
                 <p class="text-sm text-muted mt-3 leading-relaxed">
                     Aegira has built-in destructive command guards. Commands like
-                    <code class="text-accent font-mono text-xs">rm -rf /</code>,
-                    <code class="text-accent font-mono text-xs">dd</code>,
-                    <code class="text-accent font-mono text-xs">mkfs</code> are blocked at validation and runtime.
+                    <code class="text-accent3 font-mono text-xs">rm -rf /</code>,
+                    <code class="text-accent3 font-mono text-xs">dd</code>,
+                    <code class="text-accent3 font-mono text-xs">mkfs</code> are blocked at validation and runtime.
                     Plus, dry run mode lets you preview every action.
+                </p>
+            </details>
+
+            <details class="group p-5 rounded-2xl bg-card border border-border hover:border-accent/40 transition">
+                <summary class="font-semibold cursor-pointer flex items-center justify-between">
+                    <span>Will I get spammed with alerts?</span>
+                    <span class="text-accent3 group-open:rotate-45 transition text-xl">+</span>
+                </summary>
+                <p class="text-sm text-muted mt-3 leading-relaxed">
+                    No. You control when alerts fire. By default, Aegira only alerts on unknown incidents
+                    and recovery failures. You can enable recovery notifications per-rule if you want them.
                 </p>
             </details>
         </div>
@@ -438,19 +445,19 @@
 </section>
 
 <!-- ─── Footer ─── -->
-<footer class="py-12 px-6 border-t border-border">
+<footer class="py-12 px-6 border-t border-border bg-accent/5">
     <div class="max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded bg-accent/10 border border-accent/30 flex items-center justify-center">
-                    <span class="text-accent font-bold text-xs">A</span>
+                <div class="w-6 h-6 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center">
+                    <span class="text-accent3 font-bold text-xs">A</span>
                 </div>
                 <span class="font-semibold">Aegira</span>
                 <span class="text-muted text-sm">— by Aegira Labs</span>
             </div>
 
             <div class="flex items-center gap-6 text-sm text-muted">
-                <a href="https://github.com/tumhara-username/aegira" target="_blank" class="hover:text-text transition">GitHub</a>
+                <a href="https://github.com/talatsajafa" target="_blank" class="hover:text-text transition">GitHub</a>
                 <a href="#features" class="hover:text-text transition">Features</a>
                 <a href="#pricing" class="hover:text-text transition">Pricing</a>
                 <a href="mailto:hello@aegira.dev" class="hover:text-text transition">Contact</a>
